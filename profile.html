@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>All Ports Tours — Team Profiles</title>
+  <style>
+    /* 90s WordArt + clip-art inspired styling */
+    :root{
+      --bg1: #071b3a;
+      --accent1: #ff6ec7; /* hot pink */
+      --accent2: #7ef3ff; /* aqua */
+      --gold: #ffd166;
+      --muted: #f3f3f3;
+      --card-bg: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.06);
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: 'Comic Sans MS', 'Trebuchet MS', Arial, sans-serif;
+      background: radial-gradient(circle at 20% 10%, #1b1f6a 0%, var(--bg1) 35%, #031129 100%);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+    }
+
+    header{
+      padding:28px 24px;
+      text-align:center;
+      background: linear-gradient(90deg, rgba(255,110,199,0.06), rgba(126,243,255,0.03));
+      border-bottom: 2px solid rgba(255,255,255,0.03);
+      position:sticky; top:0; z-index:10;
+    }
+
+    /* Word Art style title */
+    .logo{
+      display:flex; gap:14px; align-items:center; justify-content:center;
+    }
+    .logo h1{
+      font-size:44px; margin:0; padding:0;
+      color:var(--gold);
+      background: linear-gradient(90deg,#ffefba 0%, #ffd166 30%, #ff6ec7 65%, #7ef3ff 100%);
+      -webkit-background-clip: text; background-clip:text; color:transparent;
+      text-shadow:
+        0 2px 0 rgba(0,0,0,0.45),
+        0 6px 18px rgba(0,0,0,0.5);
+      transform: rotate(-4deg) skewX(-6deg);
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:12px;
+      box-shadow: 8px 8px 0 rgba(255,110,199,0.08), -6px -6px 0 rgba(126,243,255,0.03);
+    }
+    .slogan{
+      font-size:14px; margin-top:6px; color:#ffd; opacity:0.95;
+      letter-spacing:1px;
+    }
+
+    /* navigation pills */
+    nav{margin-top:14px;}
+    .nav-list{display:flex; gap:8px; justify-content:center; flex-wrap:wrap;}
+    .nav-list a{
+      text-decoration:none; color:#061833; background:linear-gradient(180deg,#ffd166, #ffb347);
+      padding:8px 14px; border-radius:999px; font-weight:700; box-shadow:2px 6px 12px rgba(0,0,0,0.25);
+      transition:transform .18s ease; font-size:13px;
+    }
+    .nav-list a:hover{transform:translateY(-4px)}
+
+    main{padding:28px; max-width:1200px; margin:0 auto;}
+
+    .grid{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:24px;
+    }
+
+    .profile-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:18px; padding:20px; position:relative; overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      display:flex; flex-direction:column;
+    }
+
+    .profile-header{
+      display:flex; gap:16px; align-items:flex-start; margin-bottom:16px;
+    }
+
+    .profile-image{
+      width:120px; height:120px; border-radius:12px;
+      object-fit:cover; border:2px solid rgba(255,110,199,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      flex-shrink:0;
+    }
+
+    .profile-info{
+      flex:1;
+    }
+
+    .profile-name{
+      font-size:24px; margin:0 0 4px; color:#fff;
+      text-shadow: 2px 4px 0 rgba(126,243,255,0.08), -2px -2px 0 rgba(255,110,199,0.05);
+    }
+
+    .profile-title{
+      font-size:16px; color:#ffd166; margin:0 0 8px;
+      font-weight:700;
+    }
+
+    .profile-quote{
+      font-style:italic; color:#e9f4ff; opacity:0.9; margin:12px 0;
+      padding:12px; background:rgba(255,255,255,0.02); border-radius:8px;
+      border-left:3px solid var(--accent1);
+      font-size:14px;
+    }
+
+    .profile-details{
+      margin-top:12px;
+    }
+
+    .profile-fact{
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:10px; border-radius:10px; margin:8px 0;
+      font-size:13px; color:#fdfdfd;
+    }
+
+    .profile-fact strong{
+      color:#7ef3ff; display:block; margin-bottom:4px;
+    }
+
+    .profile-hobbies{
+      margin-top:12px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    .profile-hobbies strong{
+      color:#ffd166; display:block; margin-bottom:6px;
+    }
+
+    .profile-hobbies p{
+      margin:4px 0; font-size:13px; color:#e9f4ff; opacity:0.9;
+    }
+
+    footer{padding:24px; text-align:center; color:#bde9ff; opacity:0.9}
+
+    .neon-line{height:6px; border-radius:999px; background:linear-gradient(90deg,#7ef3ff,#ff6ec7); margin:18px 0}
+
+    .page-title{
+      text-align:center; margin:24px 0 32px;
+    }
+
+    .page-title h2{
+      font-size:36px; color:#fff;
+      background: linear-gradient(90deg,#ffefba 0%, #ffd166 30%, #ff6ec7 65%, #7ef3ff 100%);
+      -webkit-background-clip: text; background-clip:text; color:transparent;
+      text-shadow: 0 2px 0 rgba(0,0,0,0.45);
+      margin:0;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:640px){
+      .profile-header{flex-direction:column; align-items:center; text-align:center;}
+      .profile-image{width:100px; height:100px;}
+      .logo h1{font-size:32px}
+      .grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg width="72" height="72" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="#ffd166"/>
+            <stop offset="1" stop-color="#ff6ec7"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="20" r="12" fill="url(#g1)" stroke="#fff" stroke-opacity="0.25"/>
+        <path d="M4 50 C18 36,46 36,60 50 L60 56 L4 56 Z" fill="#7ef3ff" opacity="0.95"/>
+        <rect x="22" y="36" width="20" height="6" rx="2" fill="#061833"/>
+      </svg>
+      <div>
+        <h1>All Ports Tours</h1>
+        <div class="slogan">Sunsets as a service</div>
+      </div>
+    </div>
+
+    <nav>
+      <div class="nav-list">
+        <a href="index.html">Home</a>
+        <a href="ships.html">Ships</a>
+        <a href="profile.html">Team</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <h2>Meet Our Team</h2>
+    </div>
+
+    <section class="grid">
+      <!-- David Carter -->
+      <article class="profile-card">
+        <div class="profile-header">
+          <img src="marketing/davidcarter.jpg" alt="David Carter" class="profile-image">
+          <div class="profile-info">
+            <h3 class="profile-name">David Carter</h3>
+            <p class="profile-title">Co Founder and CEO</p>
+          </div>
+        </div>
+        <p class="profile-quote">"Our goal is simple: reliable journeys powered by smart operations."</p>
+        <div class="profile-details">
+          <p>David sets the strategic vision for Allports Tours, guiding growth, innovation, and long term partnerships across the fleet. He focuses on aligning technology, operations, and guest experience.</p>
+          <div class="profile-fact">
+            <strong>Fun Fact:</strong> Has personally visited over 40 international ports.
+          </div>
+          <div class="profile-hobbies">
+            <strong>Hobbies and Interests:</strong>
+            <p>Enjoys sailing classic yachts, reading business biographies, and mentoring young founders in the travel and maritime space.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Emily Carter -->
+      <article class="profile-card">
+        <div class="profile-header">
+          <img src="marketing/emilycarter.jpg" alt="Emily Carter" class="profile-image">
+          <div class="profile-info">
+            <h3 class="profile-name">Emily Carter</h3>
+            <p class="profile-title">Co Founder and COO</p>
+          </div>
+        </div>
+        <p class="profile-quote">"Strong operations are built on clarity, trust, and preparation."</p>
+        <div class="profile-details">
+          <p>Emily oversees daily operations, ensuring smooth coordination between ships, shore teams, and leadership. She champions efficiency, safety, and operational resilience.</p>
+          <div class="profile-fact">
+            <strong>Fun Fact:</strong> Starts every day reviewing fleet status reports.
+          </div>
+          <div class="profile-hobbies">
+            <strong>Hobbies and Interests:</strong>
+            <p>Practices yoga, loves process design books, and enjoys early morning walks by the waterfront.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bailey Finn -->
+      <article class="profile-card">
+        <div class="profile-header">
+          <img src="marketing/baileyfinn.jpg" alt="To Be Added" class="profile-image">
+          <div class="profile-info">
+            <h3 class="profile-name">Bailey Finn</h3>
+            <p class="profile-title">Director of Technical Services</p>
+          </div>
+        </div>
+        <p class="profile-quote">"If the crew can work without thinking about IT, we have done our job."</p>
+        <div class="profile-details">
+          <p>Bailey leads onboard IT support and technical deployments, keeping critical ship systems running smoothly. They bridge the gap between crew needs and corporate IT.</p>
+          <div class="profile-fact">
+            <strong>Fun Fact:</strong> Still carries a toolkit from their first onboard role.
+          </div>
+          <div class="profile-hobbies">
+            <strong>Hobbies and Interests:</strong>
+            <p>Builds custom PCs, experiments with home automation projects, and enjoys problem solving escape rooms.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ian Lee -->
+      <article class="profile-card">
+        <div class="profile-header">
+          <img src="marketing/ianlee.jpg" alt="Ian Lee" class="profile-image">
+          <div class="profile-info">
+            <h3 class="profile-name">Ian Lee</h3>
+            <p class="profile-title">Chief Information Security Officer</p>
+          </div>
+        </div>
+        <p class="profile-quote">"Security should enable the business, not slow it down."</p>
+        <div class="profile-details">
+          <p>Ian defines cybersecurity strategy, risk management, and incident response across ship and shore systems. He ensures security supports safe and reliable operations.</p>
+          <div class="profile-fact">
+            <strong>Fun Fact:</strong> Collects vintage maritime blueprints.
+          </div>
+          <div class="profile-hobbies">
+            <strong>Hobbies and Interests:</strong>
+            <p>Studies cryptography history, restores old nautical maps, and enjoys strategy board games.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sofia Ramirez -->
+      <article class="profile-card">
+        <div class="profile-header">
+          <img src="marketing/sofiaramirez.jpg" alt="Sofia Ramirez" class="profile-image">
+          <div class="profile-info">
+            <h3 class="profile-name">Sofia Ramirez</h3>
+            <p class="profile-title">Fleet Operations Center Manager</p>
+          </div>
+        </div>
+        <p class="profile-quote">"Good decisions come from clear data and calm leadership."</p>
+        <div class="profile-details">
+          <p>Sofia manages real time fleet monitoring, ship telemetry, and remote operational support. She coordinates responses during both routine operations and critical events.</p>
+          <div class="profile-fact">
+            <strong>Fun Fact:</strong> Once shadowed a bridge crew for a full voyage.
+          </div>
+          <div class="profile-hobbies">
+            <strong>Hobbies and Interests:</strong>
+            <p>Practices mindfulness training, enjoys data visualization challenges, and loves night photography of ports and ships.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Nick Zeta-Jonas -->
+      <article class="profile-card">
+        <div class="profile-header">
+          <img src="marketing/nickzetajonas.jpg" alt="Nick Zeta-Jonas" class="profile-image">
+          <div class="profile-info">
+            <h3 class="profile-name">Nick Zeta-Jonas</h3>
+            <p class="profile-title">Senior Communications Technician</p>
+          </div>
+        </div>
+        <p class="profile-quote">"If the ship is connected, the mission stays on course."</p>
+        <div class="profile-details">
+          <p>Nick maintains satellite communications and onboard network connectivity across the fleet. He specializes in VSAT systems and maritime networking reliability.</p>
+          <div class="profile-fact">
+            <strong>Fun Fact:</strong> Loves testing connectivity in remote locations, even on vacation.
+          </div>
+          <div class="profile-hobbies">
+            <strong>Hobbies and Interests:</strong>
+            <p>Amateur radio operator, hiking in low signal areas, and experimenting with portable networking gear.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="neon-line"></div>
+
+  </main>
+
+  <footer>
+    <div>© All Ports Tours — Sunsets as a service</div>
+    <div style="opacity:0.9; margin-top:8px; font-size:13px">Designed with love for nostalgic vibes. Not an actual booking site — mock content for creative projects & events.</div>
+  </footer>
+</body>
+</html>
+
