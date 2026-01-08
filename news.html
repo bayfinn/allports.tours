@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>All Ports Tours — News</title>
+  <style>
+    /* 90s WordArt + clip-art inspired styling */
+    :root{
+      --bg1: #071b3a;
+      --accent1: #ff6ec7; /* hot pink */
+      --accent2: #7ef3ff; /* aqua */
+      --gold: #ffd166;
+      --muted: #f3f3f3;
+      --card-bg: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.06);
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: 'Comic Sans MS', 'Trebuchet MS', Arial, sans-serif;
+      background: radial-gradient(circle at 20% 10%, #1b1f6a 0%, var(--bg1) 35%, #031129 100%);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+    }
+
+    header{
+      padding:28px 24px;
+      text-align:center;
+      background: linear-gradient(90deg, rgba(255,110,199,0.06), rgba(126,243,255,0.03));
+      border-bottom: 2px solid rgba(255,255,255,0.03);
+      position:sticky; top:0; z-index:10;
+    }
+
+    /* Word Art style title */
+    .logo{
+      display:flex; gap:14px; align-items:center; justify-content:center;
+    }
+    .logo h1{
+      font-size:44px; margin:0; padding:0;
+      color:var(--gold);
+      background: linear-gradient(90deg,#ffefba 0%, #ffd166 30%, #ff6ec7 65%, #7ef3ff 100%);
+      -webkit-background-clip: text; background-clip:text; color:transparent;
+      text-shadow:
+        0 2px 0 rgba(0,0,0,0.45),
+        0 6px 18px rgba(0,0,0,0.5);
+      transform: rotate(-4deg) skewX(-6deg);
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:12px;
+      box-shadow: 8px 8px 0 rgba(255,110,199,0.08), -6px -6px 0 rgba(126,243,255,0.03);
+    }
+    .slogan{
+      font-size:14px; margin-top:6px; color:#ffd; opacity:0.95;
+      letter-spacing:1px;
+    }
+
+    /* navigation pills */
+    nav{margin-top:14px;}
+    .nav-list{display:flex; gap:8px; justify-content:center; flex-wrap:wrap;}
+    .nav-list a{
+      text-decoration:none; color:#061833; background:linear-gradient(180deg,#ffd166, #ffb347);
+      padding:8px 14px; border-radius:999px; font-weight:700; box-shadow:2px 6px 12px rgba(0,0,0,0.25);
+      transition:transform .18s ease; font-size:13px;
+    }
+    .nav-list a:hover{transform:translateY(-4px)}
+
+    main{padding:28px; max-width:1200px; margin:0 auto;}
+
+    .content-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:18px; padding:24px; position:relative; overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      margin-bottom:24px;
+    }
+
+    .page-title{
+      text-align:center; margin:24px 0 32px;
+    }
+
+    .page-title h2{
+      font-size:36px; color:#fff;
+      background: linear-gradient(90deg,#ffefba 0%, #ffd166 30%, #ff6ec7 65%, #7ef3ff 100%);
+      -webkit-background-clip: text; background-clip:text; color:transparent;
+      text-shadow: 0 2px 0 rgba(0,0,0,0.45);
+      margin:0;
+    }
+
+    .content-card h3{
+      font-size:24px; margin:0 0 12px; color:#fff;
+      text-shadow: 2px 4px 0 rgba(126,243,255,0.08), -2px -2px 0 rgba(255,110,199,0.05);
+    }
+
+    .content-card p{
+      font-size:16px; line-height:1.6; color:#e9f4ff; opacity:0.95; margin:12px 0;
+    }
+
+    .news-date{
+      font-size:12px; color:#7ef3ff; opacity:0.8; margin-bottom:8px;
+      font-weight:700;
+    }
+
+    footer{padding:24px; text-align:center; color:#bde9ff; opacity:0.9}
+
+    .neon-line{height:6px; border-radius:999px; background:linear-gradient(90deg,#7ef3ff,#ff6ec7); margin:18px 0}
+
+    /* Responsive tweaks */
+    @media (max-width:640px){
+      .logo h1{font-size:32px}
+      .content-card{padding:18px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg width="72" height="72" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="#ffd166"/>
+            <stop offset="1" stop-color="#ff6ec7"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="20" r="12" fill="url(#g1)" stroke="#fff" stroke-opacity="0.25"/>
+        <path d="M4 50 C18 36,46 36,60 50 L60 56 L4 56 Z" fill="#7ef3ff" opacity="0.95"/>
+        <rect x="22" y="36" width="20" height="6" rx="2" fill="#061833"/>
+      </svg>
+      <div>
+        <h1>All Ports Tours</h1>
+        <div class="slogan">Sunsets as a service</div>
+      </div>
+    </div>
+
+    <nav>
+      <div class="nav-list">
+        <a href="index.html">Home</a>
+        <a href="ships.html">Ships</a>
+        <a href="profile.html">Team</a>
+        <a href="news.html">News</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <h2>Latest News & Updates</h2>
+    </div>
+
+    <section>
+      <article class="content-card">
+        <div class="news-date">January 2025</div>
+        <h3>New Fleet Additions</h3>
+        <p>We're excited to announce the expansion of our fleet with state-of-the-art vessels designed for the ultimate cruising experience. Stay tuned for more details on our upcoming launches!</p>
+      </article>
+
+      <article class="content-card">
+        <div class="news-date">December 2024</div>
+        <h3>Holiday Special Cruises</h3>
+        <p>Join us for our special holiday season cruises featuring exclusive events, gourmet dining experiences, and unforgettable entertainment. Book now for limited-time promotions.</p>
+      </article>
+
+      <article class="content-card">
+        <div class="news-date">November 2024</div>
+        <h3>Sustainability Initiatives</h3>
+        <p>All Ports Tours is proud to announce new eco-friendly initiatives across our fleet, including advanced waste management systems and carbon-neutral operations.</p>
+      </article>
+    </section>
+
+    <div class="neon-line"></div>
+
+  </main>
+
+  <footer>
+    <div>© All Ports Tours — Sunsets as a service</div>
+    <div style="opacity:0.9; margin-top:8px; font-size:13px">Designed with love for nostalgic vibes. Not an actual booking site — mock content for creative projects & events.</div>
+  </footer>
+</body>
+</html>
