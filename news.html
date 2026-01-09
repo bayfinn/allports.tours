@@ -101,6 +101,17 @@
       font-weight:700;
     }
 
+    .video-container{
+      width:100%; max-width:800px; margin:0 auto 24px;
+      border-radius:12px; overflow:hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    .video-container video{
+      width:100%; height:auto; display:block;
+      border:2px solid rgba(255,110,199,0.3);
+    }
+
     footer{padding:24px; text-align:center; color:#bde9ff; opacity:0.9}
 
     .neon-line{height:6px; border-radius:999px; background:linear-gradient(90deg,#7ef3ff,#ff6ec7); margin:18px 0}
@@ -148,6 +159,18 @@
     </div>
 
     <section>
+      <article class="content-card">
+        <div class="news-date">January 2026</div>
+        <h3>CEO Announcement: New Cruise Line Launch</h3>
+        <p>Watch our Co-Founder and CEO David Carter introduce our latest cruise line addition to the All Ports Tours fleet. Get ready to set sail on an incredible journey!</p>
+        <div class="video-container">
+          <video controls>
+            <source src="marketing/AllPortsTours_CEO_Announcement_2026.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </article>
+
       <article class="content-card">
         <div class="news-date">January 2025</div>
         <h3>New Fleet Additions</h3>
